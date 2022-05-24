@@ -113,7 +113,7 @@ ansible 2.9.23
 
 Now, ansibel is been configured on jenkins.
 
-### Ansible playbook 
+### Creating Ansible playbook 
 
 ~~~
 vim /var/deployment/main.yml
@@ -277,3 +277,85 @@ vim /var/deployment/hosts
 [test]
 18.217.42.228 ansible_user="ec2-user"  ansible_ssh_private_key_file="/var/deployment/key.pem"
 ~~~
+
+
+### As the playbook is having sensitive data like passwords, it will be better to keep it encrypted.
+
+~~~
+ansible-vault encrypt /var/deployment/main.yml 
+New Vault password: 
+Confirm New Vault password: 
+Encryption successful
+~~~
+
+### Running ansible playbook through jenkins
+
+1. Login to jenkins
+2. Go to New item 
+3. provide a job name and select "Free style project" 
+4. Click Ok
+
+![image](https://user-images.githubusercontent.com/100774483/170128802-55c876c2-4be6-4045-8cd8-f37d4e46ce73.png)
+
+
+It will ask a series of question: 
+1. Provide description and select source code as GIT. 
+2. Provide the git repo url of jenkins and provide the correct branch of your git 
+3. Add build step as "Invoke ansible playbook" 
+4. Provide the playbook path as "/var/deployment/main.yml" 
+5. Add the inventory file under "File or host list" as "/var/deployment/hosts" 
+6. Add the ssh key with private key too for the build and test server 
+7. Add the ansible vault password with jenkins to access the playbook. 
+![image](https://user-images.githubusercontent.com/100774483/170129944-abebb522-da1a-4259-9cb7-39724523a128.png)
+8. Select the entered vault password on "vault credentials", go to advanced and disable the host ssh key check too. 
+9. Save the settings
+
+### Jenkins manual Build
+
+Once the Job is created, click on "Build now" and check the Console Output and verify everything is fine
+
+![image](https://user-images.githubusercontent.com/100774483/170130757-067cb89a-25d9-41bb-9214-784b56a5e3b8.png)
+
+Now, a container will be crated on test server from the docker file on git repo. 
+
+### Setting up automatic deployment once git repo is modified
+
+1. Go tto git repo
+2. Select "webhooks" from "settings"
+
+![image](https://user-images.githubusercontent.com/100774483/170131805-2a60de35-8a90-4ef4-bfad-204e9a13419a.png)
+
+3. Provide the below on webhook field and save settings
+
+~~~
+http://13.233.16.92:8080/github-webhook/
+~~~
+
+
+### Reconfiguring project
+
+~~~
+1. Go to project and click "configure"
+2. Go to "Build triggers"
+3. Tick on "GitHub hook trigger for GITScm polling"
+4. Click "Save"
+~~~
+
+~~~
+By configurong this "build trigger", jenkins will run the playbook whenever it gets a webhook from the respective git repo. 
+Once the GIT repo is modified, the deployment will be take place automatically now.
+~~~
+
+![image](https://user-images.githubusercontent.com/100774483/170133218-c2167fb2-6b22-495d-b518-5158d5d30865.png)
+
+
+## Conclusion
+
+In this tutorial, we discussed about doing an automatic deployment for a docker container using jenkins, ansible, git  once the repo is modified
+
+
+
+
+
+
+
