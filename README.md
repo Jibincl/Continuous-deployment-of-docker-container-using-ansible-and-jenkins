@@ -53,11 +53,14 @@ Once installation is been cmpleted, it will be headed to the user creation.
 
 ![image](https://user-images.githubusercontent.com/100774483/170200694-5a8f85fe-c486-47fc-be11-91944875271d.png)
 
+
 Once the detaisl are entered, click save and continue
+
+![image](https://user-images.githubusercontent.com/100774483/170201132-06375784-3859-47ca-8715-a29069d998cc.png)
 
 Jenkins will  be ready now. 
 
-![image](https://user-images.githubusercontent.com/100774483/170123822-8aaaee2c-300e-41df-a6d7-8731a5e0c877.png)
+![image](https://user-images.githubusercontent.com/100774483/170201214-72157845-bcfc-44ef-bde4-519f385d47d0.png)
 
 Click "start using jenkins"
 
