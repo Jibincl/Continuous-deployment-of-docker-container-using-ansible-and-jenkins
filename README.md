@@ -1,4 +1,4 @@
-# continuous-deployment-of-docker-container-using-ansible-and-jenkins
+# Continuous-deployment-of-docker-container-using-ansible-and-jenkins
 
 ## Description
 This is a DevOps jenkins freestyle project using Git, Jenkins, Ansible and Docker on AWS for deploying a python-flask application in a Docker container.The process should be initiated from a new commit to a specific branch of a GitHub repository. This event kicks off a process that begins building the Docker image. Jenkins supports this event-driven flow using the “GitHub hook trigger for GITScm polling".
@@ -8,10 +8,10 @@ This is a DevOps jenkins freestyle project using Git, Jenkins, Ansible and Docke
 2. Docker image build server
 3. docker container production/test server
 
-### Jenkins Server
+## Jenkins Server
 Iam using an ec2 instance installed with amazone linux for this.
 
-### Jenkins Installation and configuration.
+## Jenkins Installation and configuration.
 
 ~~~
 amazon-linux-extras install epel -y
@@ -61,7 +61,7 @@ Jenkins will  be ready now.
 
 Click "start using jenkins"
 
-### installing ansible plugin on jenkins now
+## installing ansible plugin on jenkins now
 
 ~~~
 1. Go to Manage jenkins 
@@ -80,7 +80,7 @@ On the next page, select "Restart jenkins when installation is complete and no j
 
 ![image](https://user-images.githubusercontent.com/100774483/170125123-b6f65273-698f-4c45-90b6-b3747db8e701.png)
 
-### installing ansible and git on jenkins server
+## installing ansible and git on jenkins server
 
 ~~~
 amazon-linux-extras install ansible2 -y
@@ -102,7 +102,7 @@ ansible 2.9.23
   python version = 2.7.18 (default, Jun 10 2021, 00:11:02) [GCC 7.3.1 20180712 (Red Hat 7.3.1-13)]
   ~~~~
   
-  ### Configuring ansible on jenkins
+  ## Configuring ansible on jenkins
   
   1. Login to jenkins
   2. Select "Manage jenkins"
@@ -113,7 +113,7 @@ ansible 2.9.23
 
 Now, ansibel is been configured on jenkins.
 
-### Creating Ansible playbook 
+## Creating Ansible playbook 
 
 ~~~
 vim /var/deployment/main.yml
@@ -265,7 +265,7 @@ vim /var/deployment/main.yml
 ~~~
 
 
-### Hosts file
+## Hosts file
 
 ~~~
 vim /var/deployment/hosts
@@ -279,7 +279,7 @@ vim /var/deployment/hosts
 ~~~
 
 
-### As the playbook is having sensitive data like passwords, it will be better to keep it encrypted.
+## As the playbook is having sensitive data like passwords, it will be better to keep it encrypted.
 
 ~~~
 ansible-vault encrypt /var/deployment/main.yml 
@@ -288,7 +288,7 @@ Confirm New Vault password:
 Encryption successful
 ~~~
 
-### Running ansible playbook through jenkins
+## Running ansible playbook through jenkins
 
 1. Login to jenkins
 2. Go to New item 
@@ -310,7 +310,7 @@ It will ask a series of question:
 8. Select the entered vault password on "vault credentials", go to advanced and disable the host ssh key check too. 
 9. Save the settings
 
-### Jenkins manual Build
+## Jenkins manual Build
 
 Once the Job is created, click on "Build now" and check the Console Output and verify everything is fine
 
@@ -318,7 +318,7 @@ Once the Job is created, click on "Build now" and check the Console Output and v
 
 Now, a container will be crated on test server from the docker file on git repo. 
 
-### Setting up automatic deployment once git repo is modified
+## Setting up automatic deployment once git repo is modified
 
 1. Go tto git repo
 2. Select "webhooks" from "settings"
@@ -332,7 +332,7 @@ http://13.233.16.92:8080/github-webhook/
 ~~~
 
 
-### Reconfiguring project
+## Reconfiguring project
 
 ~~~
 1. Go to project and click "configure"
