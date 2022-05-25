@@ -81,7 +81,8 @@ On the next page, select "Restart jenkins when installation is complete and no j
 ![image](https://user-images.githubusercontent.com/100774483/170201964-e4a69d77-dbfa-4dcd-a8b4-6b070fa630af.png)
 
 
-![image](https://user-images.githubusercontent.com/100774483/170125123-b6f65273-698f-4c45-90b6-b3747db8e701.png)
+![image](https://user-images.githubusercontent.com/100774483/170202108-f6bb133e-06a0-4d8d-aaa0-9498eeb3d2fb.png)
+
 
 ## installing ansible and git on jenkins server
 
