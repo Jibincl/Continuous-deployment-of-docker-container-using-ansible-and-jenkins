@@ -299,7 +299,7 @@ Encryption successful
 3. provide a job name and select "Free style project" 
 4. Click Ok
 
-![image](https://user-images.githubusercontent.com/100774483/170128802-55c876c2-4be6-4045-8cd8-f37d4e46ce73.png)
+![image](https://user-images.githubusercontent.com/100774483/170202652-1c2ca0a3-c1dd-4715-814e-f4bd0c8613c0.png)
 
 
 It will ask a series of question: 
