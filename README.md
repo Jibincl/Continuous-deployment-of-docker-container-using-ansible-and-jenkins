@@ -42,7 +42,7 @@ We need to unlock jenkins webinterface with a password which can be taken from b
 
 Unlock the jenkins and install the suggested plugins
 
-![image](https://user-images.githubusercontent.com/100774483/170123177-9c2b34eb-61db-44a0-ac4f-d4a2450f34a6.png)
+![image](https://user-images.githubusercontent.com/100774483/170200062-6b6df637-0da1-48bc-bdd3-f091265c9a40.png)
 
 
 Pluggins will start to install now.
