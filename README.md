@@ -318,7 +318,7 @@ It will ask a series of question:
 
 Once the Job is created, click on "Build now" and check the Console Output and verify everything is fine
 
-![image](https://user-images.githubusercontent.com/100774483/170130757-067cb89a-25d9-41bb-9214-784b56a5e3b8.png)
+![image](https://user-images.githubusercontent.com/100774483/170203743-be4ac88e-964c-4e59-b001-5eb9278b20f4.png)
 
 Now, a container will be crated on test server from the docker file on git repo. 
 
