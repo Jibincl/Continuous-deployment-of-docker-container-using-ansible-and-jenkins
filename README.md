@@ -47,7 +47,7 @@ Unlock the jenkins and install the suggested plugins
 
 Pluggins will start to install now.
 
-![image](https://user-images.githubusercontent.com/100774483/170123336-bbc655a7-52b2-4bec-812f-014dc091f58b.png)
+![image](https://user-images.githubusercontent.com/100774483/170200287-9c90f861-0ed8-472d-9271-cd05211f9aaf.png)
 
 Once installation is been cmpleted, it will be headed to the user creation.
 
