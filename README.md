@@ -51,7 +51,7 @@ Pluggins will start to install now.
 
 Once installation is been cmpleted, it will be headed to the user creation.
 
-![image](https://user-images.githubusercontent.com/100774483/170123560-09868ccf-50ea-4190-8308-149dcb13b586.png)
+![image](https://user-images.githubusercontent.com/100774483/170200694-5a8f85fe-c486-47fc-be11-91944875271d.png)
 
 Once the detaisl are entered, click save and continue
 
