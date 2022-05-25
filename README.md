@@ -31,7 +31,7 @@ http://13.233.16.92:8080/
 
 The url will be loaded like below.
 
-![image](https://user-images.githubusercontent.com/100774483/170122856-b3d228bd-f31b-4b46-b038-2e03dc001cb2.png)
+![image](https://user-images.githubusercontent.com/100774483/170199804-4def3156-b095-4ee1-8841-ece06da78821.png)
 
 
 We need to unlock jenkins webinterface with a password which can be taken from below location on server.
